@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./index.js" defer></script>
+    <title>Tic Tac Toe</title>
+  </head>
+  <body class="grid grid-flow-row grid-rows-[1fr_4fr]">
+    <div class="flex items-center justify-center bg-slate-600">
+      <h1 class="font-bold text-[50px]">Tic Tac Toe</h1>
+    </div>
+    <div class="flex flex-col gap-4 items-center justify-center p-14 border border-red-500">
+      <div id="board" class="grid grid-flow-row grid-cols-3 grid-rows-3 w-[400px] h-[400px]"></div>
+      <button id="reset-btn" class="border border-black p-2">Reset</button>
+    </div>
+  </body>
+</html>

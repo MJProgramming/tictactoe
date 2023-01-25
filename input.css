@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.field {
+    @apply flex items-center justify-center border border-black hover:bg-[rgba(0,0,0,0.05)] font-bold text-lg;
+}
