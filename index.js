@@ -37,10 +37,8 @@ const GameBoard = (() => {
   };
 })();
 
-const Player = (name) => {
-  const hasWon = false;
-  const isX = true;
-  const getName = () => name;
+const Player = (player) => {
+  const isX = String(player).toLowerCase() === 'x';
   const makeMove = (position) => {
     if (isX) {
       GameBoard.addMarker(position, 'X');
@@ -48,5 +46,32 @@ const Player = (name) => {
       GameBoard.addMarker(position, 'O');
     }
   };
-  return { makeMove, hasWon, getName };
+  return { makeMove, player };
 };
+
+const Game = (() => {
+  let currPlayer;
+  const player1 = Player('X');
+  const player2 = Player('O');
+  const move = (pos) => {
+    if (currPlayer === undefined || currPlayer.toLowerCase() === 'o') {
+      player1.makeMove(pos);
+      currPlayer = player1.player;
+    } else {
+      player2.makeMove(pos);
+      currPlayer = player2.player;
+    }
+  };
+  const listenForMoves = () => {
+    const fields = document.querySelectorAll('.field');
+    fields.forEach((field) => {
+      field.addEventListener('click', (e) => {
+        move(e.target.getAttribute('data-index'));
+      });
+    });
+  };
+  return { listenForMoves };
+})();
+
+GameBoard.renderNewBoard();
+Game.listenForMoves();

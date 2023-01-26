@@ -603,8 +603,7 @@ video {
   border-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 50px;
   font-weight: 700;
 }
 
