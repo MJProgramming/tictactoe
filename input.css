@@ -5,3 +5,7 @@
 .field {
     @apply flex items-center justify-center border border-black hover:bg-[rgba(0,0,0,0.05)] font-bold text-[50px];
 }
+
+.replay {
+    @apply bg-green-400 border border-none rounded-lg p-4;
+}
